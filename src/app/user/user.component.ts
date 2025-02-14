@@ -1,4 +1,4 @@
-import { Component , Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -10,10 +10,9 @@ export class UserComponent {
   get iamgePath() {
     return 'assets/Users/' + this.avatar;
   }
-@Input () avatar!: string;
-@Input () name!: string;
+  @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) name!: string;
+  nazish = 'hello';
 
-  onSelectUser() {
-
-  }
+  onSelectUser() {}
 }
