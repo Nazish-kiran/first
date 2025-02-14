@@ -7,9 +7,9 @@ import { Component , Input } from '@angular/core';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  // get iamgePath() {
-  //   return 'assets/Users/' + this.selecteduser.avatar;
-  // }
+  get iamgePath() {
+    return 'assets/Users/' + this.avatar;
+  }
 @Input () avatar!: string;
 @Input () name!: string;
 
