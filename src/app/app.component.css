@@ -14,6 +14,7 @@ main {
     gap: 0.5rem;
     overflow: auto;
   }
+  
   #fallback {
     font-weight: bold;
     font-size: 1.15rem;
