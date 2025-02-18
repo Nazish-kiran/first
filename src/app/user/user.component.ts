@@ -14,9 +14,11 @@ import {
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  @Input({ required: true }) id!: string;
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
+  @Input({ required: true }) user!: {
+    id: string;
+    name: string;
+    avatar: string;
+  };
   @Output() select = new EventEmitter<string>();
 
   // avatar = input.required<string>();
@@ -26,10 +28,10 @@ export class UserComponent {
   //   return 'assets/Users/' + this.avatar();
   // });
   iamgePath() {
-    return 'assets/Users/' + this.avatar;
+    return 'assets/Users/' + this.user.avatar;
   }
 
-  onSelectUser() {
-    this.select.emit(this.id);
+  onSelectUser1() {
+    this.select.emit(this.user.id);
   }
 }

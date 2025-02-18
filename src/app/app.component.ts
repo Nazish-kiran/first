@@ -13,9 +13,13 @@ import { DUMMY_USERS } from './dummyUser';
 export class AppComponent {
   title = 'first';
   users = DUMMY_USERS;
-  onSelectUser(id: string){
-console.log('user has an id :' + id);
-
+  selectedUserId = 'u1'
+  get selectedUser(){
+    return this.users.find((user) => user.id === this.selectedUserId);
+  }
+  onSelectUser(id: string) {
+    this.selectedUserId = id;
+    console.log(this.selectedUser);  // Log the selected user to the console
   }
 
 }
