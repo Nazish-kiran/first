@@ -3,10 +3,11 @@ import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
 import { TaskComponent } from './task/task.component';
 import { DUMMY_USERS } from './dummyUser';
+import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, UserComponent, TaskComponent],
+  imports: [HeaderComponent, UserComponent, TaskComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
