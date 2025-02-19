@@ -14,6 +14,7 @@ import {type User } from './user.model';
 })
 export class UserComponent {
   @Input({ required: true }) user!: User;
+  @Input({required : true}) selected!: boolean;
   @Output() select = new EventEmitter<string>();
 
   // avatar = input.required<string>();

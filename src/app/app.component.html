@@ -3,7 +3,7 @@
   <ul id="users">
     <!-- @for(i of users; track i.id){ -->
       <li *ngFor="let i of users">
-        <app-user [user]="i" (select)="onSelectUser($event)"></app-user>
+        <app-user [user]="i" (select)="onSelectUser($event)" [selected]="i.id === selectedUser?.id"></app-user>
       </li>
     <!-- } -->
   </ul>
