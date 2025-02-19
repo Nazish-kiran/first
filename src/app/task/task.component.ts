@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { UserTaskComponent } from './user-task/user-task.component';
 
 @Component({
@@ -8,7 +8,8 @@ import { UserTaskComponent } from './user-task/user-task.component';
   styleUrl: './task.component.css',
 })
 export class TaskComponent {
-  @Input() names: string | undefined;
+  @Input({ required: true }) Userid!: string;
+  @Input({ required: true }) names!: string;
 
   task = [
     {
@@ -34,5 +35,10 @@ export class TaskComponent {
         'Prepare and describe an issue template which will help with project management',
       dueDate: '2024-06-15',
     },
-  ]
+  ];
+  get selectedUserTask() {
+    return this.task.filter((task) => {
+      return task.userId === this.Userid;
+    });
+  }
 }
