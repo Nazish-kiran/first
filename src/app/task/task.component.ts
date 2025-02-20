@@ -4,7 +4,7 @@ import { NewTaskComponent } from './new-task/new-task.component';
 
 @Component({
   selector: 'app-task',
-  imports: [UserTaskComponent , NewTaskComponent],
+  imports: [UserTaskComponent, NewTaskComponent],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css',
 })
@@ -46,14 +46,14 @@ export class TaskComponent {
   onCompleteTask(id: string) {
     this.task = this.task.filter((tasks) => {
       console.log(tasks.id);
-      
+
       return tasks.id !== id;
     });
   }
-  onStartAddTask(){
+  onStartAddTask() {
     this.isAddingTask = true;
   }
- onCancelAddTask(){
-   this.isAddingTask = false;
- }
+  onCancelAddTask() {
+    this.isAddingTask = false;
+  }
 }
