@@ -1,7 +1,7 @@
 import { Component, input, Input } from '@angular/core';
 import { UserTaskComponent } from './user-task/user-task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
-
+import { type newTaskObj } from './new-task/submit.model';
 @Component({
   selector: 'app-task',
   imports: [UserTaskComponent, NewTaskComponent],
@@ -54,6 +54,16 @@ export class TaskComponent {
     this.isAddingTask = true;
   }
   onCancelAddTask() {
+    this.isAddingTask = false;
+  }
+  onAddtask(taskData : newTaskObj){
+    this.task.unshift({
+      id: Math.random().toString(),
+      userId: this.Userid,
+      title: taskData.title,
+      summary: taskData.summary,
+      dueDate: taskData.dueDate,
+    })
     this.isAddingTask = false;
   }
 }

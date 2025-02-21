@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { taskObj } from './taskObj.model';
+import { type taskObj } from './taskObj.model';
+import { CardComponent } from "../../shared/card/card.component";
 
 @Component({
   selector: 'app-user-task',
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './user-task.component.html',
   styleUrl: './user-task.component.css',
 })
@@ -14,6 +15,5 @@ export class UserTaskComponent {
   onCompleteTask(){
        this.complete.emit(this.task.id)
        console.log("done 1");
-       
   }
 }
