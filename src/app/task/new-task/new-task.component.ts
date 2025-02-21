@@ -18,6 +18,7 @@ export class NewTaskComponent {
     this.cancel.emit();
   }
   onSubmit() {
+    console.log("submitted");
     this.submit.emit({
       title: this.enteredTitle,
       summary: this.enteredSummary,

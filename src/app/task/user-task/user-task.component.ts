@@ -14,6 +14,5 @@ export class UserTaskComponent {
 
   onCompleteTask(){
        this.complete.emit(this.task.id)
-       console.log("done 1");
   }
 }

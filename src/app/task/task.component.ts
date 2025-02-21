@@ -64,6 +64,8 @@ export class TaskComponent {
       summary: taskData.summary,
       dueDate: taskData.dueDate,
     })
+    console.log("task added");
+    
     this.isAddingTask = false;
   }
 }
