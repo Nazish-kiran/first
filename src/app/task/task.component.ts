@@ -20,9 +20,6 @@ export class TaskComponent {
   get selectedUserTask() {
     return this.taskService.getUserTasks(this.Userid);
   }
-  onCompleteTask(id: string) {
-    return this.taskService.removeTask(this.Userid);
-  }
   onStartAddTask() {
     this.isAddingTask = true;
   }
